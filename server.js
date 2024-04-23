@@ -1,4 +1,5 @@
 const cron = require('node-cron');
+const http = reqire('http');
 const TelegramBot = require('node-telegram-bot-api');
 
 const token = '6318853459:AAGfJY85VPj5pioRtRxyb7TLPgkcoBhbmsI';
@@ -18,4 +19,13 @@ cron.schedule('* * * * *', () => {
     timezone: "Asia/Ho_Chi_Minh"
 });
 
-console.log("App reminder starting!!!");
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Welcome to my simple Node.js app!');
+});
+
+const port = 3000;
+
+server.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
