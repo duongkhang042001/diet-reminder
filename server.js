@@ -1,5 +1,5 @@
 const cron = require('node-cron');
-const http = reqire('http');
+const http = require('http');
 const TelegramBot = require('node-telegram-bot-api');
 
 const token = '6318853459:AAGfJY85VPj5pioRtRxyb7TLPgkcoBhbmsI';
